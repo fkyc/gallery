@@ -1,13 +1,7 @@
 import p5 from 'p5';
 import { initBackground, drawBackground } from './background.js';
 import { initCharacters, drawCharacters } from './characters.js';
-import {
-  initFairies,
-  updateAndDrawFairies,
-  handleTouchStart,
-  handleTouchMoved,
-  handleTouchEnded,
-} from './fairies.js';
+import { initFairies, updateAndDrawFairies } from './fairies.js';
 import { preventCanvasScroll, isTouchDevice } from '../../shared/utils.js';
 
 const sketch = (p) => {
@@ -43,20 +37,9 @@ const sketch = (p) => {
     initBackground(p);
   };
 
-  p.touchStarted = () => {
-    handleTouchStart(p);
-    return false; // prevent default
-  };
-
-  p.touchMoved = () => {
-    handleTouchMoved(p);
-    return false;
-  };
-
-  p.touchEnded = () => {
-    handleTouchEnded(p);
-    return false;
-  };
+  p.touchStarted = () => false;
+  p.touchMoved = () => false;
+  p.touchEnded = () => false;
 };
 
 new p5(sketch);

@@ -2,10 +2,10 @@
 import { isTouchDevice } from '../../shared/utils.js';
 
 // -- State --
+const isTouch = isTouchDevice();
 let tatlX, tatlY;
 let taelX, taelY;
 let targetX, targetY;
-let isTouching = false;
 let idleAngle = 0;
 let idleCenterX, idleCenterY;
 
@@ -31,13 +31,14 @@ export function initFairies(p) {
 
 // -- Input handling --
 export function updateTarget(p) {
-  const touch = isTouchDevice();
-
-  if (touch) {
-    if (isTouching) {
-      // targetX/Y already set by touchMoved
+  if (isTouch) {
+    if (p.mouseIsPressed) {
+      targetX = p.mouseX;
+      targetY = p.mouseY;
+      idleCenterX = targetX;
+      idleCenterY = targetY;
+      idleAngle = 0;
     } else {
-      // Idle wander
       idleAngle += 0.01;
       targetX = idleCenterX + Math.sin(idleAngle) * 40;
       targetY = idleCenterY + Math.cos(idleAngle * 0.7) * 25;
@@ -46,28 +47,6 @@ export function updateTarget(p) {
     targetX = p.mouseX;
     targetY = p.mouseY;
   }
-}
-
-export function handleTouchStart(p) {
-  isTouching = true;
-  if (p.touches.length > 0) {
-    targetX = p.touches[0].x;
-    targetY = p.touches[0].y;
-  }
-}
-
-export function handleTouchMoved(p) {
-  if (p.touches.length > 0) {
-    targetX = p.touches[0].x;
-    targetY = p.touches[0].y;
-  }
-}
-
-export function handleTouchEnded(p) {
-  isTouching = false;
-  idleCenterX = targetX;
-  idleCenterY = targetY;
-  idleAngle = 0;
 }
 
 // -- Get target for gaze tracking --
@@ -80,7 +59,7 @@ export function updateAndDrawFairies(p) {
   updateTarget(p);
 
   // Tatl position (snap on desktop, lerp on mobile for smoothness)
-  const tatlLerp = isTouchDevice() ? 0.15 : 0.3;
+  const tatlLerp = isTouch ? 0.15 : 0.3;
   tatlX = p.lerp(tatlX, targetX, tatlLerp);
   tatlY = p.lerp(tatlY, targetY, tatlLerp);
 
