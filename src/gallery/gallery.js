@@ -1,8 +1,8 @@
 const pieces = [
   {
-    title: "Majora's Field",
+    title: 'Moon Field',
     description:
-      'Young Link and Skull Kid sit beneath a lone tree inside the Moon. Move your cursor to guide Tatl the fairy.',
+      'Young Link and Skull Kid sit beneath a lone tree inside the Moon. Move your cursor to guide Tatl and Tael.',
     href: '/gallery/src/pieces/majoras-field/index.html',
   },
 ];
