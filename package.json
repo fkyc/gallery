@@ -1,24 +1,15 @@
 {
   "name": "gallery",
-  "version": "1.0.0",
-  "description": "",
+  "private": true,
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fkyc/gallery.git"
+  "engines": {
+    "node": ">=20"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/fkyc/gallery/issues"
-  },
-  "homepage": "https://github.com/fkyc/gallery#readme",
   "devDependencies": {
     "vite": "^7.3.1"
   },

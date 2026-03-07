@@ -6,8 +6,8 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'index.html'),
-        'majoras-field': resolve(__dirname, 'src/pieces/majoras-field/index.html'),
+        main: resolve(import.meta.dirname, 'index.html'),
+        'majoras-field': resolve(import.meta.dirname, 'src/pieces/majoras-field/index.html'),
       },
     },
   },
