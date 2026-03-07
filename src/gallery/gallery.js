@@ -1,20 +1,20 @@
 const pieces = [
   {
-    title: 'Moon Field',
+    title: "Moon Field",
     description:
-      'Young Link and Skull Kid sit beneath a lone tree inside the Moon. Move your cursor to guide Tatl and Tael.',
-    href: '/gallery/src/pieces/majoras-field/index.html',
+      "Link and Skull Kid sit beneath a lone tree inside the Moon. Move your cursor to guide Tatl and Tael.",
+    href: "/gallery/src/pieces/majoras-field/index.html",
   },
 ];
 
-const list = document.getElementById('gallery-list');
+const list = document.getElementById("gallery-list");
 
 pieces.forEach((piece, i) => {
-  const entry = document.createElement('a');
-  entry.className = 'gallery-entry';
+  const entry = document.createElement("a");
+  entry.className = "gallery-entry";
   entry.href = piece.href;
 
-  const number = String(i + 1).padStart(3, '0');
+  const number = String(i + 1).padStart(3, "0");
 
   entry.innerHTML = `
     <div class="entry-info">
