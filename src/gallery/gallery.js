@@ -4,28 +4,26 @@ const pieces = [
     description:
       'Young Link and Skull Kid sit beneath a lone tree inside the Moon. Move your cursor to guide Tatl the fairy.',
     href: '/gallery/src/pieces/majoras-field/index.html',
-    thumbnail: null, // placeholder for now
   },
 ];
 
-const grid = document.getElementById('gallery-grid');
+const list = document.getElementById('gallery-list');
 
-for (const piece of pieces) {
-  const card = document.createElement('a');
-  card.className = 'gallery-card';
-  card.href = piece.href;
+pieces.forEach((piece, i) => {
+  const entry = document.createElement('a');
+  entry.className = 'gallery-entry';
+  entry.href = piece.href;
 
-  const imageHTML = piece.thumbnail
-    ? `<img class="card-image" src="${piece.thumbnail}" alt="${piece.title}" />`
-    : `<div class="card-placeholder">&#127912;</div>`;
+  const number = String(i + 1).padStart(3, '0');
 
-  card.innerHTML = `
-    ${imageHTML}
-    <div class="card-body">
-      <h2 class="card-title">${piece.title}</h2>
-      <p class="card-desc">${piece.description}</p>
+  entry.innerHTML = `
+    <div class="entry-info">
+      <span class="entry-number">${number}</span>
+      <h2 class="entry-title">${piece.title}</h2>
+      <p class="entry-desc">${piece.description}</p>
     </div>
+    <div class="entry-preview"></div>
   `;
 
-  grid.appendChild(card);
-}
+  list.appendChild(entry);
+});
