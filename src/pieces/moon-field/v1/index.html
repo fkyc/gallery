@@ -8,34 +8,22 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../../shared/piece-nav.css" />
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html, body { width: 100%; height: 100%; overflow: hidden; background: #000; }
     #sketch-container { width: 100%; height: 100%; }
     #sketch-container canvas { display: block; }
-    .back-link {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      z-index: 10;
-      font-family: 'Space Mono', monospace;
-      font-size: 11px;
-      font-weight: 400;
-      color: rgba(255, 255, 255, 0.7);
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      padding: 6px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.7);
-    }
-    .back-link:hover {
-      color: rgba(255, 255, 255, 1);
-      border-color: rgba(255, 255, 255, 1);
-    }
   </style>
 </head>
 <body>
-  <a class="back-link" href="/gallery/">← Gallery</a>
+  <nav class="piece-nav">
+    <a class="back-link" href="/gallery/">← Gallery</a>
+    <div class="version-selector">
+      <a class="version-pill active" href="/gallery/src/pieces/moon-field/v1/index.html">v1</a>
+      <a class="version-pill" href="/gallery/src/pieces/moon-field/v2/index.html">v2</a>
+    </div>
+  </nav>
   <div id="sketch-container"></div>
   <script type="module" src="./sketch.js"></script>
 </body>

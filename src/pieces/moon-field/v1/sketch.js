@@ -2,7 +2,7 @@ import p5 from 'p5';
 import { initBackground, drawBackground } from './background.js';
 import { initCharacters, drawCharacters } from './characters.js';
 import { initFairies, updateAndDrawFairies } from './fairies.js';
-import { preventCanvasScroll, isTouchDevice } from '../../shared/utils.js';
+import { preventCanvasScroll, isTouchDevice } from '../../../shared/utils.js';
 
 const sketch = (p) => {
   let canvas;

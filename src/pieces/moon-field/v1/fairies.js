@@ -1,5 +1,5 @@
 // Tatl (cursor fairy) + Tael (follower fairy) + particle system
-import { isTouchDevice } from '../../shared/utils.js';
+import { isTouchDevice } from '../../../shared/utils.js';
 
 // -- State --
 const isTouch = isTouchDevice();

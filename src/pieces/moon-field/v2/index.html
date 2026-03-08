@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Moon Field - bits &amp; pieces</title>
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../../shared/piece-nav.css" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; overflow: hidden; background: #000; }
+    #sketch-container { width: 100%; height: 100%; }
+    #sketch-container canvas { display: block; }
+  </style>
+</head>
+<body>
+  <nav class="piece-nav">
+    <a class="back-link" href="/gallery/">← Gallery</a>
+    <div class="version-selector">
+      <a class="version-pill" href="/gallery/src/pieces/moon-field/v1/index.html">v1</a>
+      <a class="version-pill active" href="/gallery/src/pieces/moon-field/v2/index.html">v2</a>
+    </div>
+  </nav>
+  <div id="sketch-container"></div>
+  <script type="module" src="./sketch.js"></script>
+</body>
+</html>

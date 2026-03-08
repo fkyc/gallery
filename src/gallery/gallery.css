@@ -91,6 +91,39 @@ body {
   max-width: 500px;
 }
 
+/* Version selector */
+.version-selector {
+  display: flex;
+  margin-top: 4px;
+}
+
+.version-pill {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border: 1px solid #000;
+  background: #fff;
+  color: #000;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.version-pill + .version-pill {
+  border-left: none;
+}
+
+.version-pill.active {
+  background: #000;
+  color: #fff;
+}
+
+.version-pill:hover:not(.active) {
+  background: #eee;
+}
+
 /* Preview */
 .entry-preview {
   width: 100%;

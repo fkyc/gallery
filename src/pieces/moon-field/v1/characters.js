@@ -1,6 +1,6 @@
 // Young Link + Skull Kid pixel art sprites as code arrays + gaze logic
 import { getTarget } from './fairies.js';
-import { renderSprite } from '../../shared/utils.js';
+import { renderSprite } from '../../../shared/utils.js';
 
 const _ = null; // transparent
 const G = '#2d8a3e'; // green (hat/tunic)
