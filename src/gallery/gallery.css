@@ -97,6 +97,35 @@ body {
   aspect-ratio: 16 / 10;
   background: #111;
   border: 1px solid #000;
+  overflow: hidden;
+  position: relative;
+  filter: grayscale(1);
+  transition: filter 0.3s;
+}
+
+.gallery-entry:hover .entry-preview {
+  filter: grayscale(0);
+}
+
+.entry-preview iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300%;
+  height: 300%;
+  border: none;
+  transform: scale(0.3334);
+  transform-origin: top left;
+  pointer-events: none;
+}
+
+.entry-snapshot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s;
 }
 
 /* Responsive */
