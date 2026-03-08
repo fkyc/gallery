@@ -189,7 +189,7 @@ export function drawCharacters(p, viewScale) {
   const centerX = p.width / 2;
 
   // -- Tree --
-  const treeScale = viewScale * 5;
+  const treeScale = viewScale * 12;
   const treeCols = TREE_SPRITE[0].length;
   const treeRows = TREE_SPRITE.length;
   const treeW = treeCols * treeScale;
@@ -204,10 +204,10 @@ export function drawCharacters(p, viewScale) {
 
   // -- Gaze tracking --
   const target = getTarget();
-  const charScale = viewScale * 4;
+  const charScale = viewScale * 1.5;
   const linkCols = LINK_SPRITE[0].length;
   const linkW = linkCols * charScale;
-  const linkX = centerX - linkW / 2 - linkW * 0.35;
+  const linkX = centerX - linkW / 2 - treeW * 0.08;
   const linkY = grassLine - LINK_SPRITE.length * charScale + charScale * 4;
 
   // Compute gaze direction
@@ -244,7 +244,7 @@ export function drawCharacters(p, viewScale) {
   // -- Draw Skull Kid --
   const skullCols = SKULL_KID_SPRITE[0].length;
   const skullW = skullCols * charScale;
-  const skullX = centerX - skullW / 2 + linkW * 0.4;
+  const skullX = centerX - skullW / 2 + treeW * 0.08;
   const skullY = grassLine - SKULL_KID_SPRITE.length * charScale + charScale * 4;
 
   // Subtle idle rocking
