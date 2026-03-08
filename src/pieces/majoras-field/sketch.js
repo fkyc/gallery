@@ -26,9 +26,9 @@ const sketch = (p) => {
     drawBackground(p);
 
     // Scale factor based on canvas size
-    const scale = Math.min(p.width / 800, p.height / 600);
+    const viewScale = Math.min(p.width / 800, p.height / 600);
 
-    drawCharacters(p, scale);
+    drawCharacters(p, viewScale);
     updateAndDrawFairies(p);
   };
 

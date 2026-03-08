@@ -184,12 +184,12 @@ export function initCharacters(p) {
   skullKidBuffer = renderSprite(p, SKULL_KID_SPRITE);
 }
 
-export function drawCharacters(p, scale) {
+export function drawCharacters(p, viewScale) {
   const grassLine = p.height * 0.72;
   const centerX = p.width / 2;
 
   // -- Tree --
-  const treeScale = scale * 5;
+  const treeScale = viewScale * 5;
   const treeCols = TREE_SPRITE[0].length;
   const treeRows = TREE_SPRITE.length;
   const treeW = treeCols * treeScale;
@@ -204,7 +204,7 @@ export function drawCharacters(p, scale) {
 
   // -- Gaze tracking --
   const target = getTarget();
-  const charScale = scale * 4;
+  const charScale = viewScale * 4;
   const linkCols = LINK_SPRITE[0].length;
   const linkW = linkCols * charScale;
   const linkX = centerX - linkW / 2 - linkW * 0.35;

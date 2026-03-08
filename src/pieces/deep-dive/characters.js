@@ -151,8 +151,8 @@ export function drawCharacters(p) {
   const bob = Math.sin(p.frameCount * 0.04) * 3;
   const bobDK = Math.sin(p.frameCount * 0.04 + 1) * 3;
 
-  const scale = Math.min(p.width / 800, p.height / 600);
-  const charScale = scale * 3;
+  const viewScale = Math.min(p.width / 800, p.height / 600);
+  const charScale = viewScale * 3;
 
   // Speed lines (drawn behind characters)
   p.stroke(255, 255, 255, 80);
