@@ -41,12 +41,12 @@ function cacheKey(piece) {
 
 const list = document.getElementById("gallery-list");
 
-pieces.forEach((piece, i) => {
+pieces.reverse().forEach((piece, i) => {
   const entry = document.createElement("a");
   entry.className = "gallery-entry";
   entry.href = piece.href;
 
-  const number = String(i + 1).padStart(3, "0");
+  const number = String(pieces.length - i).padStart(3, "0");
 
   entry.innerHTML = `
     <div class="entry-info">
