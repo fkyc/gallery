@@ -8,6 +8,7 @@ export default defineConfig({
       input: {
         main: resolve(import.meta.dirname, 'index.html'),
         'majoras-field': resolve(import.meta.dirname, 'src/pieces/majoras-field/index.html'),
+        'deep-dive': resolve(import.meta.dirname, 'src/pieces/deep-dive/index.html'),
       },
     },
   },
