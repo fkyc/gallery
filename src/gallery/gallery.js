@@ -80,16 +80,16 @@ pieces.forEach((piece, i) => {
         ctx.drawImage(canvas, 0, 0, snapshot.width, snapshot.height);
         try {
           localStorage.setItem(cacheKey(piece), canvas.toDataURL());
-        } catch (_) {}
+        } catch (_) { /* storage may be unavailable */ }
       }
-    } catch (_) {}
+    } catch (_) { /* cross-origin canvas */ }
   }
 
   // Try localStorage cache first
   let cached = null;
   try {
     cached = localStorage.getItem(cacheKey(piece));
-  } catch (_) {}
+  } catch (_) { /* storage may be unavailable */ }
 
   if (cached) {
     showSnapshot(cached);
@@ -110,9 +110,9 @@ pieces.forEach((piece, i) => {
             showSnapshot(dataURL);
             try {
               localStorage.setItem(cacheKey(piece), dataURL);
-            } catch (_) {}
+            } catch (_) { /* storage may be unavailable */ }
           }
-        } catch (_) {}
+        } catch (_) { /* cross-origin canvas */ }
         bootIframe.remove();
       }, 500);
     });
