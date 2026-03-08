@@ -5,7 +5,7 @@ const pieces = [
     version: 1,
     description:
       "Link and Skull Kid sit beneath a lone tree inside the Moon. Move your cursor to guide Tatl and Tael.",
-    href: "/gallery/src/pieces/majoras-field/index.html",
+    href: "/gallery/src/pieces/moon-field/index.html",
   },
   {
     title: "Deep Dive",
