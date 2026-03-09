@@ -161,6 +161,23 @@ body {
   transition: opacity 0.3s;
 }
 
+/* Exploration links */
+.exploration-link {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #666;
+  text-decoration: none;
+  margin-top: 4px;
+  display: inline-block;
+}
+
+.exploration-link:hover {
+  color: #000;
+}
+
 /* Responsive */
 @media (max-width: 700px) {
   .gallery-header {

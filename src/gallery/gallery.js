@@ -8,6 +8,9 @@ const pieces = [
       { number: 1, href: "/gallery/src/pieces/moon-field/v1/index.html" },
       { number: 2, href: "/gallery/src/pieces/moon-field/v2/index.html" },
     ],
+    explorations: [
+      { title: "Tree Studies", href: "/gallery/src/explorations/trees/index.html" },
+    ],
   },
   {
     title: "Deep Dive",
@@ -75,6 +78,7 @@ pieces.toReversed().forEach((piece, i) => {
       <h2 class="entry-title">${piece.title}</h2>
       <p class="entry-desc">${piece.description}</p>
       ${versionHTML}
+      ${piece.explorations ? piece.explorations.map(e => `<a class="exploration-link" href="${e.href}" onclick="event.stopPropagation()">${e.title} →</a>`).join('') : ''}
     </div>
     <div class="entry-preview"></div>
   `;
