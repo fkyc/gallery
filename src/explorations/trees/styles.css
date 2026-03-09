@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Space Mono', monospace;
+  background: #fff;
+  color: #000;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Back link */
+.back-link {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.85rem;
+  color: #666;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: #000;
+}
+
+/* Header */
+.page-header {
+  padding: 80px 40px 40px;
+}
+
+.page-header h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(4rem, 12vw, 10rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+}
+
+.page-header p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 16px;
+  line-height: 1.5;
+  max-width: 500px;
+}
+
+/* Masonry list */
+.exploration-list {
+  columns: 3;
+  column-gap: 20px;
+  padding: 40px 40px 80px;
+}
+
+/* Card */
+.exploration-entry {
+  break-inside: avoid;
+  margin-bottom: 20px;
+  border: 1px solid #e0e0e0;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.exploration-entry:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Canvas */
+.canvas-wrap {
+  width: 100%;
+  aspect-ratio: var(--ratio, 16/10);
+  background: #111;
+  overflow: hidden;
+  filter: grayscale(1);
+  transition: filter 0.3s;
+}
+
+.canvas-wrap canvas {
+  display: block;
+}
+
+.exploration-entry:hover .canvas-wrap {
+  filter: grayscale(0);
+}
+
+/* Entry info */
+.entry-info {
+  padding: 12px 14px;
+}
+
+.entry-number {
+  font-size: 0.75rem;
+  color: #999;
+}
+
+.entry-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-top: 2px;
+}
+
+.entry-desc {
+  font-size: 0.8rem;
+  color: #777;
+  line-height: 1.4;
+  margin-top: 4px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .exploration-list {
+    columns: 2;
+    padding: 32px 24px 60px;
+  }
+}
+
+@media (max-width: 600px) {
+  .page-header {
+    padding: 48px 20px 24px;
+  }
+
+  .exploration-list {
+    columns: 1;
+    padding: 24px 20px 60px;
+  }
+}
